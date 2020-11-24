@@ -7,7 +7,7 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Airi Satou", "Ashton Cox", "Tiger Nixon", "Suki Burks", "Michael Silva", "Olivia Liang"],
     datasets: [{
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
