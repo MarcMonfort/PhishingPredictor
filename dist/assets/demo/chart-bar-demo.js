@@ -7,20 +7,17 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Tiger Nixon", "Jena Gaines", "Prescott Barlett", "Bradley Greer", "Quinn Flynn", "Garrett Winters"],
+    labels: ["Tiger Nixon", "Gloria Little", "Bruno Nash", "Haley Kennedy", "Michelle House", "Michael Silva"],
     datasets: [{
-      label: "Revenue",
+      label: "Threat Level",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [15000, 14600, 14500, 13000, 12300, 12000],
+      data: [15000, 11400, 10200, 8900, 8900, 8800],
     }],
   },
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'month'
-        },
         gridLines: {
           display: false
         },
@@ -31,7 +28,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 20000,
           maxTicksLimit: 5
         },
         gridLines: {
