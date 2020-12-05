@@ -7,12 +7,12 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Airi Satou", "Ashton Cox", "Tiger Nixon", "Suki Burks", "Michael Silva", "Olivia Liang"],
+    labels: ["Tiger Nixon", "Jena Gaines", "Prescott Barlett", "Bradley Greer", "Quinn Flynn", "Garrett Winters"],
     datasets: [{
       label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [15000, 14600, 14500, 13000, 12300, 12000],
     }],
   },
   options: {
