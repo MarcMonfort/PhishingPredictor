@@ -7,20 +7,20 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Nov 27", "Nov 28", "Nov 29", "Nov 30", "Dec 1", "Dec 2", "Dec 3", "Dec 4", "Dec 5", "Dec 6", "Dec 7", "Dec 8", "Dec 9"],
+    labels: ["", "", "", "", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", ""],
     datasets: [{
       label: "Threat",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
+      pointRadius: 3,
       pointBackgroundColor: "rgba(2,117,216,1)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [500, 800, 300, 400, 500, 2000, 4000, 1000, 7000, 12000, 18000, 2000, 1000],
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     }],
   },
   options: {
@@ -33,7 +33,7 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 5
         }
       }],
       yAxes: [{
@@ -52,3 +52,42 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+
+setInterval(function(){ 
+
+  myLineChart.data.datasets[0].data.shift();
+
+
+  if (Math.floor(Math.random() * 10) < 7)
+  {
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 500) - 200);
+    //var aux = myLineChart.data.datasets[0].data[24] + 100;
+  }
+
+  else
+  {
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10000) - 5500);
+  }
+
+  if (aux < 0){
+    aux = 0;
+  }
+  else if (aux > 20000)
+  {
+    aux = 20000;
+  }
+  myLineChart.data.datasets[0].data.push(aux);
+
+
+  var d = new Date();
+
+  myLineChart.data.labels.shift();
+  myLineChart.data.labels.push(d.getMinutes() + ':' + d.getSeconds());
+
+
+  myLineChart.update();
+
+
+}, 1000);

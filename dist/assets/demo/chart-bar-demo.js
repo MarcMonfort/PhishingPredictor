@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
-var myLineChart = new Chart(ctx, {
+var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ["Tiger Nixon", "Gloria Little", "Bruno Nash", "Haley Kennedy", "Michelle House", "Michael Silva"],
@@ -41,3 +41,36 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+setInterval(function(){ 
+
+  len = myBarChart.data.datasets[0].data.length;
+  
+  for (i = 0; i < len; i++) {
+    if (Math.floor(Math.random() * 10) < 10)
+    {
+      var aux = myBarChart.data.datasets[0].data[i] + (Math.floor(Math.random() * 1000) - 500);
+      
+      if (aux < 0){
+        aux = 0;
+      }
+      else if (aux > 20000)
+      {
+        aux = 20000;
+      }
+
+      myBarChart.data.datasets[0].data[i] = aux;
+
+    }
+
+    //myBarChart.data.datasets[0].data[i] = 0;
+
+
+
+  }
+
+  myBarChart.update();
+
+
+}, 1000);
