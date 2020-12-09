@@ -55,7 +55,7 @@ var myLineChart = new Chart(ctx, {
 
 
 
-setInterval(function(){ 
+setInterval(function(){
 
   myLineChart.data.datasets[0].data.shift();
 
@@ -84,7 +84,7 @@ setInterval(function(){
   var d = new Date();
 
   myLineChart.data.labels.shift();
-  myLineChart.data.labels.push(d.getMinutes() + ':' + d.getSeconds());
+  myLineChart.data.labels.push(d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds());
 
 
   myLineChart.update();
