@@ -39,7 +39,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 20000,
+          max: 100,
           maxTicksLimit: 5
         },
         gridLines: {
@@ -62,21 +62,21 @@ setInterval(function(){
 
   if (Math.floor(Math.random() * 10) < 7)
   {
-    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 500) - 200);
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10) - 3);
     //var aux = myLineChart.data.datasets[0].data[24] + 100;
   }
 
   else
   {
-    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10000) - 5500);
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 50) - 25);
   }
 
   if (aux < 0){
     aux = 0;
   }
-  else if (aux > 20000)
+  else if (aux > 100)
   {
-    aux = 20000;
+    aux = 100;
   }
   myLineChart.data.datasets[0].data.push(aux);
 
