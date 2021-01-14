@@ -12,7 +12,7 @@ var myBarChart = new Chart(ctx, {
       label: "Threat Level",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [15000, 11400, 10200, 8900, 8900, 8800],
+      data: [75, 57, 51, 45, 45, 44],
     }],
   },
   options: {
