@@ -90,4 +90,4 @@ setInterval(function(){
   myLineChart.update();
 
 
-}, 5000);
+}, 1000);
