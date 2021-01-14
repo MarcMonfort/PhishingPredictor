@@ -62,13 +62,13 @@ setInterval(function(){
 
   if (Math.floor(Math.random() * 10) < 7)
   {
-    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10) - 5);
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 6) - 3);
     //var aux = myLineChart.data.datasets[0].data[24] + 100;
   }
 
   else
   {
-    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 50) - 25);
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 20) - 10);
   }
 
   if (aux < 0){
