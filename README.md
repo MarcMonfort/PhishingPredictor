@@ -1,4 +1,9 @@
 
-## Copyright and License
+# Autores del código:
+Marc Monfort
+Àlex Cera
+Nil Vidal
+Wei Xiao Xia
+Jan Puigdomènech
 
-Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/gh-pages/LICENSE) license.
+Este código se ha creado a partir de la plantilla SB Admin de Start Bootstrap con licencia MIT
