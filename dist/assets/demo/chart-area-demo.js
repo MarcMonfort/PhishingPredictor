@@ -7,20 +7,20 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["", "", "", "", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "", "", "", ""],
     datasets: [{
-      label: "Sessions",
+      label: "Threat",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
+      pointRadius: 3,
       pointBackgroundColor: "rgba(2,117,216,1)",
       pointBorderColor: "rgba(255,255,255,0.8)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     }],
   },
   options: {
@@ -33,13 +33,13 @@ var myLineChart = new Chart(ctx, {
           display: false
         },
         ticks: {
-          maxTicksLimit: 7
+          maxTicksLimit: 5
         }
       }],
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40000,
+          max: 100,
           maxTicksLimit: 5
         },
         gridLines: {
@@ -52,3 +52,42 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+
+setInterval(function(){
+
+  myLineChart.data.datasets[0].data.shift();
+
+
+  if (Math.floor(Math.random() * 10) < 7)
+  {
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 6) - 3);
+    //var aux = myLineChart.data.datasets[0].data[24] + 100;
+  }
+
+  else
+  {
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 20) - 10);
+  }
+
+  if (aux < 0){
+    aux = 0;
+  }
+  else if (aux > 70)
+  {
+    aux = 70;
+  }
+  myLineChart.data.datasets[0].data.push(aux);
+
+
+  var d = new Date();
+
+  myLineChart.data.labels.shift();
+  myLineChart.data.labels.push(d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds());
+
+
+  myLineChart.update();
+
+
+}, 1000);

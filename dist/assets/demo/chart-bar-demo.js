@@ -4,23 +4,20 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
-var myLineChart = new Chart(ctx, {
+var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["Tiger Nixon", "Gloria Little", "Bruno Nash", "Haley Kennedy", "Michelle House", "Michael Silva"],
     datasets: [{
-      label: "Revenue",
+      label: "Threat Level",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [75, 57, 51, 45, 45, 44],
     }],
   },
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'month'
-        },
         gridLines: {
           display: false
         },
@@ -31,7 +28,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 100,
           maxTicksLimit: 5
         },
         gridLines: {
@@ -44,3 +41,38 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+/*
+setInterval(function(){
+
+  len = myBarChart.data.datasets[0].data.length;
+
+  for (i = 0; i < len; i++) {
+    if (Math.floor(Math.random() * 10) < 10)
+    {
+      var aux = myBarChart.data.datasets[0].data[i] + (Math.floor(Math.random() * 1000) - 500);
+
+      if (aux < 0){
+        aux = 0;
+      }
+      else if (aux > 20000)
+      {
+        aux = 20000;
+      }
+
+      myBarChart.data.datasets[0].data[i] = aux;
+
+    }
+
+    //myBarChart.data.datasets[0].data[i] = 0;
+
+
+
+  }
+
+  myBarChart.update();
+
+
+}, 1000);
+*/
