@@ -62,7 +62,7 @@ setInterval(function(){
 
   if (Math.floor(Math.random() * 10) < 7)
   {
-    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10) - 3);
+    var aux = myLineChart.data.datasets[0].data[24] + (Math.floor(Math.random() * 10) - 5);
     //var aux = myLineChart.data.datasets[0].data[24] + 100;
   }
 
@@ -74,9 +74,9 @@ setInterval(function(){
   if (aux < 0){
     aux = 0;
   }
-  else if (aux > 100)
+  else if (aux > 70)
   {
-    aux = 100;
+    aux = 70;
   }
   myLineChart.data.datasets[0].data.push(aux);
 
